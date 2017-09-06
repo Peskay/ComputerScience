@@ -1,3 +1,5 @@
+// Thomas Huber 9/6/17
+
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
