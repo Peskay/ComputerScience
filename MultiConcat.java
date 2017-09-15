@@ -1,4 +1,7 @@
+// Thomas Huber 9/15/17
+
 import java.util.Scanner;
+
 public class MultiConcat {
     public static void main(String []args) {
         Scanner sc = new Scanner(System.in);
