@@ -1,0 +1,76 @@
+/**
+ * Main class of the Java program. 
+ * 
+ */
+//Add the import statement for the Scanner class.
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+		String name = new String("Start");
+		while(!name.equalsIgnoreCase("Done"))
+		{
+			boolean hasSpace = false;
+			while(!hasSpace)
+			{
+			    name = getInput();
+			    if(name.equalsIgnoreCase("Done")) break;
+			    if(checkSpace(name)) hasSpace = true;
+			    else System.out.println("Please don't forget to enter a space between first and last names.");
+			}
+			
+			if(name.equalsIgnoreCase("Done")) break;
+			System.out.println(getName(name));
+		}
+			
+        System.out.println("Goodbye.");
+    }
+	
+	
+	//********************************************
+	//Create a method header for getInput() method
+	//The method takes in no arguments but returns a String
+	public static String getInput() {
+		//Create a Scanner object called scan that reads input from the System
+	    	Scanner scan = new Scanner(System.in);
+		//SYSOP "Please enter the first name, a space, and the last name:"
+		System.out.println("Please enter the first name, a space, and the last name:");
+		//return users input
+	    return scan.nextLine();
+	//Closed curly bracket for the getInput() method
+	}
+	
+	
+	//**********************************************
+	//Create a method header for checkSpace() method
+	//The method takes in a String and returns a boolean
+	public static Boolean checkSpace(String str) {
+		//if the String sent over contains a space return true
+	    if (str.contains(" ")) {
+	        return true;
+	    }
+		//else return false
+	    else {
+	        return false;
+	    }
+	//Closed curly bracket for the getInput() method
+	}
+	
+	
+	//**********************************************
+    //Create a method header for a method called getName().
+    //The method takes in a String and returns a String
+    public static String getName(String name) {
+        //initialize an int variable called space and set it to the index where the space is
+        int space = name.indexOf(" ");
+        //Declare a new string called output
+        String output;
+        String[] names = name.split(" ");
+        //set output to "First:Firstname Last:Lastname"
+        output = "First:" + names[0] + " Last:" + names[1];
+        //return output
+        return output;
+	//Closed curly bracket for the getName() method
+    }
+}
